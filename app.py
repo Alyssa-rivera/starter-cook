@@ -15,7 +15,7 @@ import requests
 # -- Initialization section --
 app = Flask(__name__)
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 app.config['GIPHY_KEY'] = os.getenv("GIPHY_KEY")
 
 events = [
@@ -24,8 +24,7 @@ events = [
         {"event":"Finals Begin", "date":"2019-12-01"}
     ]
 
-=======
->>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
+# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 # name of database
 app.config['MONGO_DBNAME'] = 'cook'
 
@@ -39,11 +38,11 @@ mongo = PyMongo(app)
 # HOMEPAGE
 
 @app.route('/')
-<<<<<<< HEAD
-@app.route('/index')
-def index():
-    return render_template("index.html", time = datetime.now())
-=======
+# <<<<<<< HEAD
+# @app.route('/index')
+# def index():
+#     return render_template("index.html", time = datetime.now())
+# =======
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
@@ -58,13 +57,13 @@ def homepage():
 
 # def index():
 #     return render_template('index.html', events = events)
->>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
+# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 
 
 # CONNECT TO DB, ADD DATA
 
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 @app.route('/base')
 def base():
     return render_template('base.html')
@@ -72,10 +71,6 @@ def base():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
-# @app.route('/base')
-# def base():
-#     return render_template('base.html')
 
  
 # ________________________________________Routes section API/Learn More________________________________________________________
@@ -132,20 +127,20 @@ def add():
 # _______________________________________End Community Page______________________________________________________
 
 # @app.route('/add')
-=======
+
 # @app.route('/add')
 
->>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
+# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 # def add():
     # connect to the database
 
     # insert new data
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
     # return a message to the user
-    return ""
+    # return ""
 
 # ------------Below is the new information waiting to be add------------------------------------------
-=======
+# =======
     # return a message to the use
->>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
+# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
