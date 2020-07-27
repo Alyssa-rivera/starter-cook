@@ -1,8 +1,10 @@
 <html>
     <head>
-        <title>Community Events Board</title>
+        {% extends "base.html" %}
+        <title>Recipes</title>
     </head>
     <body>
+    {% block content %}
       <h1>Community Events Board</h1>
       <div class="event-list">
         <ul>
@@ -11,5 +13,6 @@
           {% endfor %}
         </ul>
       </div>
+      {% endblock %}
     </body>
 </html>

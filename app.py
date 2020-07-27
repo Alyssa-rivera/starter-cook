@@ -21,17 +21,18 @@ app = Flask(__name__)
 
 # HOMEPAGE
 
+@app.route('/')
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
-
+    
 
 # INDEX
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return "Hello World"
+# @app.route('/')
+# @app.route('/index')
+# def index():
+#     return "Hello World"
 
 # def index():
 #     return render_template('index.html', events = events)
