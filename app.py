@@ -38,16 +38,14 @@ mongo = PyMongo(app)
 
 @app.route('/')
 # <<<<<<< HEAD
-# @app.route('/index')
-# def index():
-#     return render_template("index.html", time = datetime.now())
+@app.route('/index')
+def index():
+    return render_template("index.html", time = datetime.now())
 # =======
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
     
-
-# INDEX
 
 # @app.route('/')
 # @app.route('/index')

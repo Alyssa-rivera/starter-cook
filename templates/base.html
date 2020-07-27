@@ -1,7 +1,7 @@
 <html>
 <!-- <<<<<<< HEAD -->
     <head>
-         <!-- {% block head %} -->
+
         <title>Starter Cook</title>
         <!-- adding bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -47,7 +47,7 @@
     </form>
   </div>
 </nav>
-        <!-- {% endblock % } -->
+    
     </head>
     
 
@@ -88,19 +88,19 @@
           {% for event in events %}
             <li>{{ event.event }} - {{ event.date }}</li>
           {% endfor %}
+
         </ul>
       </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <!-- {% block content %}
-    {% endblock %} -->
+  
     </body>
 </html>
 
 <head>
-    <!-- {% block head %} -->
+   
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="static/css/myCss.css" rel="stylesheet">
         <meta charset="UTF-8">
@@ -137,15 +137,11 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         </nav>
-    <!-- {% endblock %} -->
+
 </head>
 <body>
 
-<div id="content">{% block content %}{% endblock %}</div>
 
-
-<!-- {% block footer %} -->
-<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -288,7 +284,6 @@
     <script src=“https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js” integrity=“sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo” crossorigin=“anonymous”></script>
     <script src=“https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js” integrity=“sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI” crossorigin=“anonymous”></script>
     <script src=“script.js”></script>
-    <!-- {% endblock %} -->
+ 
     </body>
 </html>
-<!-- >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d -->
