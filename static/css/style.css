@@ -1,0 +1,46 @@
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+		h6 {
+			text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:50px;
+            font-weight: bold
+		}
+        p{
+            text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:30px;
+            font-weight: bold
+        }
+        h1{
+            font-family: 'Dancing Script', cursive;
+            font-size:50px;
+            font-weight: bold
+        }
+        .container{
+           text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:25px;
+            font-weight: bold 
+        }
+
+        .center{
+            text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:25px;
+            font-weight: bold
+       
+        }
+        .nav_bar{
+            font-family: 'Abril Fatface', cursive;
+            font-size:20px
+        }
+        .navbar-brand{
+            font-size:25px;
+        }
+        
