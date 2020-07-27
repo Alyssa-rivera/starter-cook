@@ -1,6 +1,7 @@
 <html>
 <!-- <<<<<<< HEAD -->
     <head>
+         <!-- {% block head %} -->
         <title>Starter Cook</title>
         <!-- adding bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -9,11 +10,7 @@
         <!-- <link rel="stylesheet" href="style.css?q={{time}}" type="text/css" /> -->
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    
-
-    <body>
- <nav class="navbar navbar-expand-lg navbar-ligt bg-light">
+        <nav class="navbar navbar-expand-lg navbar-ligt bg-light">
   <a class="navbar-brand" href="#">Starter Cook</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -49,6 +46,12 @@
     </form>
   </div>
 </nav>
+        {% endblock % }
+    </head>
+    
+
+    <body>
+ 
   
       <h1>Welcome to Starter Cook</h1>
     </div>
@@ -72,7 +75,6 @@
           <div class="col-sm-6"><a href="https://www.wellsfargo.com/about/corporate/supplier-registration/">Become a Supplier</a></div>
             <i class="build"></i>
           </div>
-          <div class
 
 </div>
 </div>
@@ -91,13 +93,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    {% block content %}
-    {% endblock %}
+    <!-- {% block content %}
+    {% endblock %} -->
     </body>
 </html>
-<!-- ======= -->
+
 <head>
-    {% block head %}
+    <!-- {% block head %} -->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="static/css/myCss.css" rel="stylesheet">
         <meta charset="UTF-8">
@@ -134,14 +136,14 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         </nav>
-    {% endblock %}
+    <!-- {% endblock %} -->
 </head>
 <body>
 
 <div id="content">{% block content %}{% endblock %}</div>
 
 
-{% block footer %}
+<!-- {% block footer %} -->
 <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
@@ -283,7 +285,7 @@
     <script src=“https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js” integrity=“sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo” crossorigin=“anonymous”></script>
     <script src=“https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js” integrity=“sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI” crossorigin=“anonymous”></script>
     <script src=“script.js”></script>
-    {% endblock %}
+    <!-- {% endblock %} -->
     </body>
 </html>
 <!-- >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d -->
