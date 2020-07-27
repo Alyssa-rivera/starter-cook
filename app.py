@@ -15,7 +15,6 @@ import requests
 # -- Initialization section --
 app = Flask(__name__)
 
-# <<<<<<< HEAD
 app.config['GIPHY_KEY'] = os.getenv("GIPHY_KEY")
 
 events = [
