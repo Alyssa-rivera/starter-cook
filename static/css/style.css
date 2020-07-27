@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
@@ -44,3 +45,14 @@
             font-size:25px;
         }
         
+=======
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+}
+>>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d

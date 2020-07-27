@@ -15,6 +15,7 @@ import requests
 # -- Initialization section --
 app = Flask(__name__)
 
+<<<<<<< HEAD
 app.config['GIPHY_KEY'] = os.getenv("GIPHY_KEY")
 
 events = [
@@ -23,6 +24,8 @@ events = [
         {"event":"Finals Begin", "date":"2019-12-01"}
     ]
 
+=======
+>>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 # name of database
 app.config['MONGO_DBNAME'] = 'cook'
 
@@ -32,17 +35,36 @@ app.config['MONGO_URI'] = 'mongodb+srv://recipe_reader:ccwAiFDz5VKmV5dA@cluster0
 mongo = PyMongo(app)
 
 # -- Routes section --
-# INDEX
+
+# HOMEPAGE
 
 @app.route('/')
+<<<<<<< HEAD
 @app.route('/index')
 def index():
     return render_template("index.html", time = datetime.now())
+=======
+@app.route('/homepage')
+def homepage():
+    return render_template('homepage.html')
+    
+
+# INDEX
+
+# @app.route('/')
+# @app.route('/index')
+# def index():
+#     return "Hello World"
+
+# def index():
+#     return render_template('index.html', events = events)
+>>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 
 
 # CONNECT TO DB, ADD DATA
 
 
+<<<<<<< HEAD
 @app.route('/base')
 def base():
     return render_template('base.html')
@@ -110,12 +132,20 @@ def add():
 # _______________________________________End Community Page______________________________________________________
 
 # @app.route('/add')
+=======
+# @app.route('/add')
+
+>>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
 # def add():
     # connect to the database
 
     # insert new data
 
+<<<<<<< HEAD
     # return a message to the user
     return ""
 
 # ------------Below is the new information waiting to be add------------------------------------------
+=======
+    # return a message to the use
+>>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d

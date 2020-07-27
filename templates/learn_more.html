@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Starter Cook</title>
+        <!-- adding bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	 crossorigin="anonymous">
+     <!-- link to css has to be after bootstrap-->
+        <!-- <link rel="stylesheet" href="style.css?q={{time}}" type="text/css" /> -->
+        <!-- <link rel="stylesheet" href="style.css" type="text/css" /> -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    
+
+    <body>
+    <div>
+        <div>
+        <div class="nav_bar">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"> 
+        <li class="nav-item active">
+        <a class="nav-link" href="/index">Welcome Page <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item dropdown">       
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Type of Recipes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Popular</a>
+          <a class="dropdown-item" href="#">Healthy</a>
+          <a class="dropdown-item" href="#">Vegetarian</a>
+          <a class="dropdown-item" href="#">Vegan</a>
+          <a class="dropdown-item" href="#">Gluten Free</a>
+          <a class="dropdown-item" href="#">Dairy Free</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">And More</a>
+        </div>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="/learn_more">Learn More</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/community">Community Page</a>
+    </li>
+    </ul>
+     <a class="navbar-brand" href="#">Starter Cook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+
+    </form>
+  </div>
+  </div>
+</nav>
+ 
+    <h2>Welcome to Learn More Page</h2>
+     <h3>Want to try out the recipe before making it! Yes! We Got you!</h3>
+        <p>We have the best restaurant recommendations just for you!</p>
+        <form method="post" action="/restaurant">
+            <input type="text" name="restaurantchoice" placeholder="Type in any recipe or food"/>
+            <!-- placeholder is the light text within the box -->
+            <!-- URL not found mean the rote is not set up yet! -->
+            <!-- name is to collect information from user -->
+            <!-- name is the key -->
+
+            <input type="submit" value="Submit"/>
+            <!-- method, name, action; two method actions (GET OR POST); for form it's POST;   -->
+            <!-- action is just route -->
+        </form>
+    
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+		h6 {
+			text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:50px;
+            font-weight: bold
+		}
+
+        .center{
+            text-align: center;
+            font-family:'Grenze Gotisch', cursive;
+            font-weight:300;
+            font-size:25px;
+            font-weight: bold
+       
+        }
+        .nav_bar{
+            font-family: 'Abril Fatface', cursive;
+            font-size:20px
+        }
+        .navbar-brand{
+            font-size:25px;
+	</style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    </body>
+</html>
