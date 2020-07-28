@@ -58,7 +58,13 @@ def contact():
 import requests
 url = "https://tripadvisor1.p.rapidapi.com/restaurants/list"
 
+<<<<<<< HEAD
 querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","currency":"USD","lang":"en_US","location_id":"293919"}
+=======
+app.config['GIPHY_KEY'] = 'https://tripadvisor1.p.rapidapi.com/restaurants/list'
+response = requests.get('https://tripadvisor1.p.rapidapi.com/restaurants/list').json()
+querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","restaurant_mealtype":"lobster","currency":"USD","lang":"en_US","location_id":"293919"}
+>>>>>>> 52b127d5fd637242ce813497a139de6dd1fd27d9
 
 headers = {
     'x-rapidapi-host': "tripadvisor1.p.rapidapi.com",
@@ -96,6 +102,16 @@ def restaurant():
 #         return "error"
 
 
+# Recipe API
+# recipe_response = requests.get('https://api.spoonacular.com/recipes/complexSearch').json()
+# app.config['RECIPE_KEY'] = os.getenv("f72d5cb516fe4796aa7d61932e477990")
+# def recipe():
+#     if request.method == 'POST':
+#         recipe_choice = request.form['recipechoice']
+#         source = requests.get(mychoice, response, headers=headers, params=querystring)
+#         return render_template("restaurant.html", time = datetime.now(), source=source)
+#     else:
+#         return "error"
 
 # ________________________________________End Section of API_______________________________________________________ 
 @app.route('/type_of_recipe')
