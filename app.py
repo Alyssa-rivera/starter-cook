@@ -58,13 +58,19 @@ def contact():
 import requests
 url = "https://tripadvisor1.p.rapidapi.com/restaurants/list"
 
+# <<<<<<< HEAD
 
+# =======
+# >>>>>>> 884455f17ab56d6e1a8fb2a8b677811adfefbe1b
 querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","currency":"USD","lang":"en_US","location_id":"293919"}
 
 app.config['GIPHY_KEY'] = 'https://tripadvisor1.p.rapidapi.com/restaurants/list'
 response = requests.get('https://tripadvisor1.p.rapidapi.com/restaurants/list').json()
 querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","restaurant_mealtype":"lobster","currency":"USD","lang":"en_US","location_id":"293919"}
+# <<<<<<< HEAD
 
+# =======
+# >>>>>>> 884455f17ab56d6e1a8fb2a8b677811adfefbe1b
 
 headers = {
     'x-rapidapi-host': "tripadvisor1.p.rapidapi.com",
@@ -109,7 +115,7 @@ def restaurant():
 #     if request.method == 'POST':
 #         recipe_choice = request.form['recipechoice']
 #         source = requests.get(mychoice, response, headers=headers, params=querystring)
-#         return render_template("restaurant.html", time = datetime.now(), source=source)
+#         return render_template(".html", time = datetime.now(), source=source)
 #     else:
 #         return "error"
 
