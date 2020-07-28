@@ -1,7 +1,28 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-<title></title>
-
+<h2 style="text-align: center"> <a href="/" style="text-decoration: none; color:blue"> Recipes for you: </a></h2>
+<div style="margin-left:35%;">
+<br></br>
+  <ul class="list-unstyled">
+      {% for recipe in recipes %}
+          <li class="media">
+              <img src="{{recipes['image']}}" class="align-self-center mr-3" alt="..." width="15%" height="15%">
+              <div class="media-body">
+                  <h5 class="mt-0 mb-1"><a href="/recipes?id={{ recipe['id'] }}">{{ recipes['title'] }}</a></h5>
+                  {% if 'likes' not in recipe %}
+                      How many minutes for preparation? {{recipes['preparationMinutes']}} <br>
+                      How many minutes for cooking? {{recipes['cookingMinutes']}}  <br>
+                      How many likes has this recipe? {{recipes['aggregateLikes']}}  <br>
+                  {% else %}
+                      How many your ingredients? {{recipes['usedIngredientCount']}} <br>
+                      How many missed ingredients? {{recipes['missedIngredientCount']}}  <br>
+                      How many likes has this recipe? {{recipes['likes']}}  <br>
+                  {% endif %}
+              </div>
+          </li> <br>
+      {% endfor %}
+  </ul>
+</div >
 {% endblock %}

@@ -100,16 +100,71 @@ def restaurant():
 #         return "error"
 
 
-# Recipe API
-# recipe_response = requests.get('https://api.spoonacular.com/recipes/complexSearch').json()
-# app.config['RECIPE_KEY'] = os.getenv("f72d5cb516fe4796aa7d61932e477990")
-# def recipe():
-#     if request.method == 'POST':
-#         recipe_choice = request.form['recipechoice']
-#         source = requests.get(mychoice, response, headers=headers, params=querystring)
-#         return render_template(".html", time = datetime.now(), source=source)
-#     else:
-#         return "error"
+# ________________________________________Routes section API/Recipes________________________________________________________
+
+
+url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
+
+headers = {
+  'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  'x-rapidapi-key': "<6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56>",
+  }
+
+random_joke = "food/jokes/random"
+find = "recipes/findByIngredients"
+randomFind = "recipes/random"
+
+@app.route('/recipesearch', methods=['POST', 'GET'])
+def search_page():
+    if request.method == 'POST':
+        my_ingr = request.form['Ingredients']
+        source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
+        return render_template("search.html", source=source)
+    else:
+        return "error"
+#   joke_response = str(requests.request("GET", url + random_joke, headers=headers).json()['text'])
+#   return render_template('search.html')
+
+#  joke=joke_response - add to parameters?
+
+if __name__ == '__main__':
+  app.run()
+
+# Retrieves a results list of recipes
+@app.route('/recipes')
+# def get_recipes( )
+def get_recipes():
+  if (str(request.args['ingredients']).strip() != ""):
+      # If there is a list of ingredients -> list
+      querystring = {"number":"5","ranking":"1","ignorePantry":"false","ingredients":request.args['ingredients']}
+      response = requests.request("GET", url + find, headers=headers, params=querystring).json()
+      return render_template('found_recipe.html', recipes=response)
+  else:
+      # Random recipes
+      querystring = {"number":"5"}
+      response = requests.request("GET", url + randomFind, headers=headers, params=querystring).json()
+      print(response)
+      return render_template('found_recipe.html', recipes=response)
+
+# Retrieves specific recipe
+@app.route('/recipe')
+def get_recipe():
+  recipe_id = request.args['id']
+  recipe_info_endpoint = "recipes/{0}/information".format(recipe_id)
+  ingedientsWidget = "recipes/{0}/ingredientWidget".format(recipe_id)
+  equipmentWidget = "recipes/{0}/equipmentWidget".format(recipe_id)
+  recipe_info = requests.request("GET", url + recipe_info_endpoint, headers=headers).json()
+    
+  recipe_headers = {
+      'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      'x-rapidapi-key': "<6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56>",
+      'accept': "text/html"
+  }
+  querystring = {"defaultCss":"true", "showBacklink":"false"}
+  recipe_info['inregdientsWidget'] = requests.request("GET", url + ingedientsWidget, headers=recipe_headers, params=querystring).text
+  recipe_info['equipmentWidget'] = requests.request("GET", url + equipmentWidget, headers=recipe_headers, params=querystring).text
+    
+  return render_template('recipe.html', recipe=recipe_info)
 
 # ________________________________________End Section of API_______________________________________________________ 
 @app.route('/type_of_recipe')
