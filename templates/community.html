@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
-{% block content %}
 <body>
-<h6>Welcome to our community page! We want to hear from you!</h6>
+{% block title %}Welcome to our community page!{% endblock %}
+{% block content %}
+<h6>We want to hear from you!</h6>
 <div class="center">
     	  <form method="post" action="/add">
     <!-- action="/events/new" is the route name; now have to go build the route -->

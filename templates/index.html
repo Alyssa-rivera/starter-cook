@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
-{% block content %}
 
 <!-- Carousel Slides -->
 
 <body>
+    {% block title %}Welcome to Start Cooker's Home Page!{% endblock %}
+    {% block content %}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -21,7 +22,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
     <div class="carousel-inner">
->>>>>>> 52b127d5fd637242ce813497a139de6dd1fd27d9
+    
     <div class="carousel-item active">
         <img class="d-block w-100" src="https://i.postimg.cc/Hxmmzqyh/hmpg1v3.jpg" alt="Chinese Dish"   height="600" width="200"> 
         <div class="carousel-caption d-none d-md-block">
@@ -29,8 +30,8 @@
         <p>Chinese Dishes are usually delicious and easy to make! A beginner? Try that!</p> -->
         <div class="container">
         <div class="row">
-            <div class="col-sm-6"><a href="#">Popular</a></div>
-            <div class="col-sm-6"><a href="https://food.ndtv.com/lists/10-most-popular-chinese-dishes-740725">Recipe</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="#">Popular</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="https://food.ndtv.com/lists/10-most-popular-chinese-dishes-740725">Recipe</a></div>
             <i class="build"></i>
             </div>
             </div>
@@ -44,8 +45,8 @@
         <!-- Insert the Hyperlink to other website -->
         <div class="container">
         <div class="row">
-            <div class="col-sm-6"><a href="#">More Sweetness</a></div>
-            <div class="col-sm-6"><a href="https://addapinch.com/the-best-chocolate-cake-recipe-ever/">Recipe</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="#">More Sweetness</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="https://addapinch.com/the-best-chocolate-cake-recipe-ever/">Recipe</a></div>
             <i class="build"></i>
         </div>
     </div>
@@ -58,8 +59,8 @@
         <p>Lobster Tails seem to be difficult to make, but we have the simple steps for you to follow!</p> -->
         <div class="container">
         <div class="row">
-            <div class="col-sm-6"><a href="#">Popular</a></div>
-            <div class="col-sm-6"><a href="https://www.delish.com/cooking/recipe-ideas/a26883467/grilled-lobster-tail-recipe/">Recipe</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="#">Popular</a></div>
+            <div id="sub-title" class="col-sm-6"><a href="https://www.delish.com/cooking/recipe-ideas/a26883467/grilled-lobster-tail-recipe/">Recipe</a></div>
             <i class="build"></i>
             </div>
         </div>
@@ -111,6 +112,15 @@
         </div>
     </div>
 </div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+    #sub-title{
+      font-family: 'Kaushan Script', cursive;
+      font-weight: bold;
+      font-size: 60px;
+      text-shadow: 2px 2px white
+    }
+</style>
 
 </body>
 {% endblock %}
