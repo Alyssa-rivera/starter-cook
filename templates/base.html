@@ -14,12 +14,12 @@
     <!-- Nav_Bar -->
         <div class="nav_bar">
         <!-- <nav class="navbar sticky-top navbar-light bg-light"> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"> 
         <li class="nav-item active">
-        <a class="nav-link" href="/index">Starter Cook<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/index">Welcome Page<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">       
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,29 +59,22 @@
 </div>
 </nav>
 </div>
-
+<div id="title">{% block title %}{% endblock %}</div>
 <div id="content">{% block content %}{% endblock %}</div>
 
-<!-- footer -->
-<<<<<<< HEAD
-
-<footer class="page-footer font-small unique-color-dark">
-=======
+<!-- Footer -->
 <footer class="page-footer font-small unique-color-light">
->>>>>>> 52b127d5fd637242ce813497a139de6dd1fd27d9
 
-  <!-- <div style="background-color: #5bc0de;"> -->
+  <div style="background-color: #5bc0de;">
     <div class="container">
 
       <!-- Grid row-->
       <div class="row py-4 d-flex align-items-center">
 
         <!-- Grid column -->
-
-        <div class="text-center ">
-          <p id="footer-title" class="mb-0">Get connected with us on social networks!</p>
+        <div class="text-center">
+          <div class="mb-0">Get connected with us on social networks!</div>
         </div>
-    
         <!-- Grid column -->
 
         <!-- Grid column -->
@@ -116,6 +109,7 @@
 
     </div>
   </div>
+
   <!-- Footer Links -->
   <div class="container text-center text-md-left mt-5">
 
@@ -126,83 +120,62 @@
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
         <!-- Content -->
-        
-        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Starter Cook</div></dl>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <dt>Starter Cook is a platform meant for all levels of culinary expertise, including beginners. Become a Starter Cook today!
-          adipisicing elit.</dt>
+        <h6 class="text-uppercase font-weight-bold">Starter Cook</h6>
+    
+        <p>Starter Cook is a platform meant for all levels of culinary expertise, including beginners. Become a Starter Cook today!
+</p>
+
       </div>
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-         <div id="footer-2">
-        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Products</div>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 25px;">
-        <dt>
+     <div id="footer-2">
+        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Products</div></dl>
         <dd>
-          <a href="#!">>Shop Essentials</a>
+          <a id="fas" href="#!">>Shop Essentials</a>
         </dd>
         <dd>
-          <a href="#!">>The Starter Cookbook</a>
+          <a id="fas" href="#!">>The Starter Cookbook</a>
         </dd>
         <dd>
-          <a href="#!">>Our Blog</a>
+          <a id="fas" href="#!">>Our Blog</a>
         </dd>
-        <dt>
-        </dl>
     </div>
+ 
 
-
-      </div>
       <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <div id="footer-1" class="text-uppercase font-weight-bold">Useful links</div>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <dl>
-        <dt>
-            <a href="#!">>Your Account</a>
-        </dt>
-        <dt>
-            <a href="#!">>Become an Affiliate</a>
-        </dt>
-        <dt>
-          <a href="#!">>Help</a>
-        </dt>
-        </dl>
-
+        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Useful links</div></dl>
+        <dd>
+            <a id="fas" href="#!">>Your Account</a>
+        </dd>
+        <dd>
+            <a id="fas" href="#!">>Become an Affiliate</a>
+        </dd>
+        <dd>
+          <a id="fas" href="#!">>Help</a>
+        </dd>
+ 
       </div>
+
       <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
         <!-- Links -->
-
-        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Contact </div></dl>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <dt>
+       <dl><div id="footer-1" class="text-uppercase font-weight-bold">Contact </div></dl>
         <dd>
           <i class="fas"></i>New York, NY 10012, USA</dd>
         <dd>
           <i class="fas"></i>startercook@example.com</dd>
         <dd>
           <i class="fas"></i>+ 01 234 567 88</dd>
-        </dt>
-        <!-- <dt>
-        <dd>
-          <i class="fas fa-home mr-3"></i>New York, NY 10012, USA</dd>
-        <dd>
-          <i class="fas fa-envelope mr-3"></i>startercook@example.com</dd>
-        <dd>
-          <i class="fas fa-phone mr-3"></i>+ 01 234 567 88</dd>
-        </dt> -->
+
       </div>
       <!-- Grid column -->
 
@@ -214,12 +187,11 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://startercook.com/"> StarterCook</a>
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
 
 </footer>
-</div>
 <!-- Footer -->
 </div>
 <!-- JS Query -->
@@ -241,21 +213,18 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 	</script>
 	<script src="script.js"></script>
+
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-<<<<<<< HEAD
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-  
-=======
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet');
->>>>>>> 52b127d5fd637242ce813497a139de6dd1fd27d9
 		h6 {
 			text-align: center;
             font-family: 'Abril Fatface', cursive;
             font-weight:300;
-            font-size:35px;
+            font-size:30px;
     
 		}
          p{
@@ -287,7 +256,7 @@
         }
         .nav_bar{
             font-family: 'Abril Fatface', cursive;
-            font-size:20px
+            font-size:25px
         }
         .navbar-brand{
             font-size:25px;
@@ -296,25 +265,26 @@
             font-family: 'Amatic SC', cursive;
             font-size:30px;
             font-weight: bold;
+            background-color:#95C19F
+
         }
         #footer-1{
-            font-size:25px;
+            font-size:20px;
             text-align:left
         }
-        .fas{
-            text-align:left
-            
+        a{
+            font-size:18px
         }
         dd{
-            font-size:23px;
+            font-size:18px
         }
-        dt{
-            font-size:23px;
+        #title{
+            font-family: 'Amatic SC', cursive;
+            text-align: center;
+            font-size:50px;
+            font-weight: bold;
+            background-color:#DCDCDC;
         }
-        #footer-2{
-            
-        }
-        
     
         </style>
 </body>
