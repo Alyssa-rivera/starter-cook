@@ -62,6 +62,7 @@
 <div id="content">{% block content %}{% endblock %}</div>
 
 <!-- footer -->
+
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -71,9 +72,11 @@
       <div class="row py-4 d-flex align-items-center">
 
         <!-- Grid column -->
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Get connected with us on social networks!</h6>
+
+        <div class="text-center ">
+          <p id="footer-title" class="mb-0">Get connected with us on social networks!</p>
         </div>
+    
         <!-- Grid column -->
 
         <!-- Grid column -->
@@ -108,7 +111,6 @@
 
     </div>
   </div>
-
   <!-- Footer Links -->
   <div class="container text-center text-md-left mt-5">
 
@@ -119,13 +121,11 @@
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
         <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">Starter Cook</h6>
+        
+        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Starter Cook</div></dl>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Starter Cook is a platform meant for all levels of culinary expertise, including beginners. Become a Starter Cook today!
-          adipisicing elit.</p>
-        <p>Starter Cook is a platform meant for all levels of culinary expertise, including beginners. Become a Starter Cook today!
-          adipisicing elit.</p>
-
+        <dt>Starter Cook is a platform meant for all levels of culinary expertise, including beginners. Become a Starter Cook today!
+          adipisicing elit.</dt>
       </div>
       <!-- Grid column -->
 
@@ -133,17 +133,22 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Shop Essentials</a>
-        </p>
-        <p>
-          <a href="#!">The Starter Cookbook</a>
-        </p>
-        <p>
-          <a href="#!">Our Blog</a>
-        </p>
+         <div id="footer-2">
+        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Products</div>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 25px;">
+        <dt>
+        <dd>
+          <a href="#!">>Shop Essentials</a>
+        </dd>
+        <dd>
+          <a href="#!">>The Starter Cookbook</a>
+        </dd>
+        <dd>
+          <a href="#!">>Our Blog</a>
+        </dd>
+        <dt>
+        </dl>
+    </div>
 
 
       </div>
@@ -153,17 +158,19 @@
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <div id="footer-1" class="text-uppercase font-weight-bold">Useful links</div>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Your Account</a>
-        </p>
-        <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
-        </p>
+        <dl>
+        <dt>
+            <a href="#!">>Your Account</a>
+        </dt>
+        <dt>
+            <a href="#!">>Become an Affiliate</a>
+        </dt>
+        <dt>
+          <a href="#!">>Help</a>
+        </dt>
+        </dl>
 
       </div>
       <!-- Grid column -->
@@ -172,15 +179,25 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact Us</h6>
+
+        <dl><div id="footer-1" class="text-uppercase font-weight-bold">Contact </div></dl>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> startercook@example.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-    
+            <dt>
+        <dd>
+          <i class="fas"></i>New York, NY 10012, USA</dd>
+        <dd>
+          <i class="fas"></i>startercook@example.com</dd>
+        <dd>
+          <i class="fas"></i>+ 01 234 567 88</dd>
+        </dt>
+        <!-- <dt>
+        <dd>
+          <i class="fas fa-home mr-3"></i>New York, NY 10012, USA</dd>
+        <dd>
+          <i class="fas fa-envelope mr-3"></i>startercook@example.com</dd>
+        <dd>
+          <i class="fas fa-phone mr-3"></i>+ 01 234 567 88</dd>
+        </dt> -->
       </div>
       <!-- Grid column -->
 
@@ -197,20 +214,18 @@
   <!-- Copyright -->
 
 </footer>
+</div>
 <!-- Footer -->
 </div>
 <!-- JS Query -->
       </div>
+      </div> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <<a href="info.html">Try the Info Page</a>
     </body>
 </html>
-=======
-
-
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 	</script>
@@ -225,6 +240,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+  
 		h6 {
 			text-align: center;
             font-family:'Grenze Gotisch', cursive;
@@ -232,13 +249,13 @@
             font-size:50px;
             font-weight: bold
 		}
-        p{
+         p{
             text-align: center;
             font-family:'Grenze Gotisch', cursive;
             font-weight:300;
             font-size:30px;
             font-weight: bold
-        }
+        } 
         h1{
             font-family: 'Dancing Script', cursive;
             font-size:50px;
@@ -267,6 +284,30 @@
         .navbar-brand{
             font-size:25px;
         }
+        #footer-title{
+            font-family: 'Amatic SC', cursive;
+            font-size:30px;
+            font-weight: bold;
+        }
+        #footer-1{
+            font-size:25px;
+            text-align:left
+        }
+        .fas{
+            text-align:left
+            
+        }
+        dd{
+            font-size:23px;
+        }
+        dt{
+            font-size:23px;
+        }
+        #footer-2{
+            
+        }
+        
+    
         </style>
 </body>
   

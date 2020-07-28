@@ -5,9 +5,8 @@ from flask import render_template
 from flask import request
 from datetime import datetime
 # from model import getImageUrlFrom
-# from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo
 import os
-import requests
 
 
 # sudo pip3 install dnspython
@@ -16,46 +15,36 @@ import requests
 app = Flask(__name__)
 
 # app.config['GIPHY_KEY'] = os.getenv("GIPHY_KEY")
+app.config['TRIP_KEY'] = 'a5f304028dmsh7d1413cbfff8d76p13efabjsnf5bba74c75e5'
+# .env will not be push to git hub 
 
 
-# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
+
 # name of database
-# app.config['MONGO_DBNAME'] = 'cook'
+app.config['MONGO_DBNAME'] = 'cook'
 
 # # URI of database
-# app.config['MONGO_URI'] = 'mongodb+srv://recipe_reader:ccwAiFDz5VKmV5dA@cluster0.nayre.mongodb.net/cook?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://recipe_reader:ccwAiFDz5VKmV5dA@cluster0.nayre.mongodb.net/cook?retryWrites=true&w=majority'
 
-# mongo = PyMongo(app)
+mongo = PyMongo(app)
 
 # -- Routes section --
 
 # HOMEPAGE
 
 @app.route('/')
-# <<<<<<< HEAD
 @app.route('/index')
 def index():
     return render_template("index.html", time = datetime.now())
-# =======
+
 @app.route('/homepage')
 def homepage():
-    return render_template('index.html')
+    return render_template('homepage.html')
     
-
-# @app.route('/')
-# @app.route('/index')
-# def index():
-#     return "Hello World"
-
-# def index():
-#     return render_template('index.html', events = events)
-# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
-
 
 # CONNECT TO DB, ADD DATA
 
 
-# <<<<<<< HEAD
 @app.route('/base')
 def base():
     return render_template('base.html')
@@ -66,30 +55,46 @@ def contact():
 
  
 # ________________________________________Routes section API/Learn More________________________________________________________
+import requests
+url = "https://tripadvisor1.p.rapidapi.com/restaurants/list"
 
-# app.config['GIPHY_KEY'] = 'https://tripadvisor1.p.rapidapi.com/restaurants/list'
-response = requests.get('https://tripadvisor1.p.rapidapi.com/restaurants/list').json()
-querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","restaurant_mealtype":"lobster","currency":"USD","lang":"en_US","location_id":"293919"}
+querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","currency":"USD","lang":"en_US","location_id":"293919"}
 
 headers = {
     'x-rapidapi-host': "tripadvisor1.p.rapidapi.com",
     'x-rapidapi-key': "a5f304028dmsh7d1413cbfff8d76p13efabjsnf5bba74c75e5"
     }
-
-
+@app.route('/')
 @app.route('/learn_more')
 def learn_more():
-    return render_template('learn_more.html')
-
+    return render_template("learn_more.html", time = datetime.now())
 @app.route('/restaurant', methods = ['POST', 'GET'])
-
 def restaurant():
     if request.method == 'POST':
         mychoice = request.form['restaurantchoice']
-        source = requests.get(mychoice, response, headers=headers, params=querystring)
+        source = requests.request("GET", url, headers=headers, params=querystring)
         return render_template("restaurant.html", time = datetime.now(), source=source)
     else:
-        return "error"
+        return "error"   
+
+
+# print(response.text)
+
+# -- Routes section --
+# @app.route('/')
+# @app.route('/learn_more')
+# def learn_more():
+#     return render_template("learn_more.html", time = datetime.now())
+
+# @app.route('/restaurant', methods = ['POST', 'GET'])
+# def restaurant():
+#     if request.method == 'POST':
+#         mychoice = request.form['restaurantchoice']
+#         source = requests.get(mychoice, app.config['TRIP_KEY'])
+#         return render_template("restaurant.html", time = datetime.now(), source=source)
+#     else:
+#         return "error"
+
 
 
 # ________________________________________End Section of API_______________________________________________________ 
@@ -133,6 +138,3 @@ def add():
     # return ""
 
 # ------------Below is the new information waiting to be add------------------------------------------
-# =======
-    # return a message to the use
-# >>>>>>> 157c480e2b8dca608729a51a01ec0a15e8c8e88d
