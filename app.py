@@ -129,8 +129,17 @@ def search():
         return render_template("search.html", source=source)
     else:
         return "error"
+
+@app.route('/recipesearch', methods=['POST', 'GET'])
+def search_page():
+    # if request.method == 'POST':
+    #     my_ingr = request.form['Ingredients']
+    #     source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
+    #     return render_template("search.html", source=source)
+    # else:
+
 #   joke_response = str(requests.request("GET", url + random_joke, headers=headers).json()['text'])
-#   return render_template('search.html')
+    return render_template('search.html')
 
 #  joke=joke_response - add to parameters?
 
