@@ -49,6 +49,10 @@ def homepage():
 def base():
     return render_template('base.html')
 
+@app.route('/how_to')
+def how_to():
+    return render_template('how_to.html')
+
  
 # ________________________________________Routes section API/Learn More________________________________________________________
 import requests
@@ -63,10 +67,6 @@ querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaur
 app.config['GIPHY_KEY'] = 'https://tripadvisor1.p.rapidapi.com/restaurants/list'
 response = requests.get('https://tripadvisor1.p.rapidapi.com/restaurants/list').json()
 querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","restaurant_mealtype":"lobster","currency":"USD","lang":"en_US","location_id":"293919"}
-# <<<<<<< HEAD
-
-# =======
-# >>>>>>> 884455f17ab56d6e1a8fb2a8b677811adfefbe1b
 
 headers = {
     'x-rapidapi-host': "tripadvisor1.p.rapidapi.com",
