@@ -49,10 +49,6 @@ def homepage():
 def base():
     return render_template('base.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
  
 # ________________________________________Routes section API/Learn More________________________________________________________
 import requests
@@ -82,15 +78,18 @@ def learn_more():
     return render_template("learn_more.html", time = datetime.now())
 @app.route('/restaurant', methods = ['POST', 'GET'])
 def restaurant():
-    if request.method == 'POST':
+    # change the POST to GET 
+    if request.method == 'GET':
         mychoice = request.form['restaurantchoice']
         source = requests.request("GET", url, headers=headers, params=querystring)
         return render_template("restaurant.html", time = datetime.now(), source=source)
     else:
         return "error"   
 
-
 # print(response.text)
+
+# Another function to look for api
+#look over the model project
 
 # -- Routes section --
 # @app.route('/')
@@ -122,6 +121,7 @@ random_joke = "food/jokes/random"
 find = "recipes/findByIngredients"
 randomFind = "recipes/random"
 
+<<<<<<< HEAD
 
 @app.route('/recipesearch')
 def search_page():
@@ -134,6 +134,27 @@ def search_page():
 
     # search_response = str(requests.request("GET", url + random_joke, headers=headers).json()["text"])
     # return render_template('search.html', search=search_response)
+=======
+@app.route('/searchrecipes', methods=['POST', 'GET'])
+def search():
+    if request.method == 'POST':
+        my_ingr = request.form['Ingredients']
+        source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
+        return render_template("search.html", source=source)
+    else:
+        return "error"
+
+@app.route('/recipesearch', methods=['POST', 'GET'])
+def search_page():
+    # if request.method == 'POST':
+    #     my_ingr = request.form['Ingredients']
+    #     source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
+    #     return render_template("search.html", source=source)
+    # else:
+
+#   joke_response = str(requests.request("GET", url + random_joke, headers=headers).json()['text'])
+    return render_template('search.html')
+>>>>>>> 620f7c107e5ebbfa0a5b1f7871f693053e9cae74
 
 #  joke=joke_response - add to parameters?
 
