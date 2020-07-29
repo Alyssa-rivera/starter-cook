@@ -125,6 +125,12 @@ randomFind = "recipes/random"
     # search_response = str(requests.request("GET", url + random_joke, headers=headers).json()["text"])
     # return render_template('search.html', search=search_response)
 
+
+
+
+
+recipe_key = 'f72d5cb516fe4796aa7d61932e477990'
+
 @app.route('/recipesearch', methods=['POST', 'GET'])
 def search_page():
     
@@ -136,29 +142,16 @@ def search_page():
 #   app.run()
 
 # Retrieves a results list of recipes
-@app.route('/recipes')
+@app.route('/recipes', methods = ['POST', 'GET'])
 # def get_recipes( )
 def get_recipes():
-    # api = "https://api.spoonacular.com/recipes/findByIngredients?"
-    # api_key= f"https://api.spoonacular.com/recipes/findByIngredients?{f17da484f0mshcad6e3c6da86e82p1cb724jsn7138dd8ba119} + + &number=2"
-    # recipes = requests.get(api).json()
+ 
     if request.method == 'POST':
         my_ingr = request.form['ingredients']
-        source = getRecipe(my_ingr, app.config['f17da484f0mshcad6e3c6da86e82p1cb724jsn7138dd8ba119'])
+        source = getRecipe(my_ingr, recipe_key)
         return render_template("found_recipe.html", source=source)
     else:
         return render_template("search_error.html")
-#   if (str(request.args['ingredients']).strip() != ""):
-      # If there is a list of ingredients -> list
-#       querystring = {"number":"5","ranking":"1","ignorePantry":"false","ingredients":request.args['ingredients']}
-#       response = requests.request("GET", url + find, headers=headers, params=querystring).json()
-#       return render_template('found_recipe.html', recipes=response)
-#   else:
-#       # Random recipes
-#       querystring = {"number":"5"}
-#       response = requests.request("GET", url + randomFind, headers=headers, params=querystring).json()
-#       print(response)
-#       return render_template('found_recipe.html', recipes=response)
 
 # Retrieves specific recipe
 @app.route('/recipe')

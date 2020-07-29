@@ -17,6 +17,6 @@ import random
 #     return response['data'][random.randint(0,24)]['images']['fixed_height']['url']
 
 def getRecipe(query, key):
-    recipe_query = f"https://api.spoonacular.com/recipes/findByIngredients?{key}ingredients={query}&number=<5>&limitLicense=<false>&ranking=<1>&ignorePantry=<ignorePantry>"
+    recipe_query = f"https://api.spoonacular.com/recipes/findByIngredients?apiKey={key}&ingredients={query}&number=5"
     response = requests.get(recipe_query).json()
     return response
