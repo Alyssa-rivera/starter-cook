@@ -4,7 +4,6 @@
 <!-- Carousel Slides -->
 
 <body>
-    {% block title %}Welcome to Start Cook!{% endblock %}
     {% block content %}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -81,8 +80,9 @@
 
 <h1><center> Find Your Next Favorite Dish 
 <br></br>
-   <div class="text-center">
-<button type="button" class="btn btn-outline-info">Search for a Recipe</button>
+   <!-- <div class="text-center" href="/recipesearch"> -->
+<a href="/recipesearch" class="btn btn-outline-info" role="button">Search for a Recipe</a>
+<!-- <button type="button" class="btn btn-outline-info">Search for a Recipe</button> -->
 </div> </center> </h1>
 <br></br>
 <!-- <button type="button" class="btn btn-outline-success btn-xl mx-auto d-block">Search for a Recipe</button> -->
