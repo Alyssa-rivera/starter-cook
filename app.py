@@ -4,6 +4,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from datetime import datetime
+from model import getRecipe
 # from model import getImageUrlFrom
 from flask_pymongo import PyMongo
 import os
@@ -54,10 +55,7 @@ def base():
 import requests
 url = "https://tripadvisor1.p.rapidapi.com/restaurants/list"
 
-# <<<<<<< HEAD
 
-# =======
-# >>>>>>> 884455f17ab56d6e1a8fb2a8b677811adfefbe1b
 querystring = {"restaurant_tagcategory_standalone":"10591","lunit":"km","restaurant_tagcategory":"10591","limit":"30","currency":"USD","lang":"en_US","location_id":"293919"}
 
 app.config['GIPHY_KEY'] = 'https://tripadvisor1.p.rapidapi.com/restaurants/list'
@@ -121,54 +119,35 @@ random_joke = "food/jokes/random"
 find = "recipes/findByIngredients"
 randomFind = "recipes/random"
 
-<<<<<<< HEAD
 
-@app.route('/recipesearch')
-def search_page():
-    if request.method == 'POST':
-        my_ingr = request.form['ingredients']
-        source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
-        return render_template("search.html", source=source)
-    else:
-        return render_template("search_error.html")
+
 
     # search_response = str(requests.request("GET", url + random_joke, headers=headers).json()["text"])
     # return render_template('search.html', search=search_response)
-=======
-@app.route('/searchrecipes', methods=['POST', 'GET'])
-def search():
-    if request.method == 'POST':
-        my_ingr = request.form['Ingredients']
-        source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
-        return render_template("search.html", source=source)
-    else:
-        return "error"
 
 @app.route('/recipesearch', methods=['POST', 'GET'])
 def search_page():
-    # if request.method == 'POST':
-    #     my_ingr = request.form['Ingredients']
-    #     source = requests.get(my_ingr, app.config['6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56'])
-    #     return render_template("search.html", source=source)
-    # else:
+    
+    return render_template('search.html')
 
 #   joke_response = str(requests.request("GET", url + random_joke, headers=headers).json()['text'])
-    return render_template('search.html')
->>>>>>> 620f7c107e5ebbfa0a5b1f7871f693053e9cae74
-
 #  joke=joke_response - add to parameters?
-
-if __name__ == '__main__':
-  app.run()
+# if __name__ == '__main__':
+#   app.run()
 
 # Retrieves a results list of recipes
 @app.route('/recipes')
 # def get_recipes( )
 def get_recipes():
-    api = "https://api.spoonacular.com/recipes/findByIngredients?"
-    api_key= f"https://api.spoonacular.com/recipes/findByIngredients?{f17da484f0mshcad6e3c6da86e82p1cb724jsn7138dd8ba119} + + &number=2"
-    recipes = requests.get(api).json()
-
+    # api = "https://api.spoonacular.com/recipes/findByIngredients?"
+    # api_key= f"https://api.spoonacular.com/recipes/findByIngredients?{f17da484f0mshcad6e3c6da86e82p1cb724jsn7138dd8ba119} + + &number=2"
+    # recipes = requests.get(api).json()
+    if request.method == 'POST':
+        my_ingr = request.form['ingredients']
+        source = getRecipe(my_ingr, app.config['f17da484f0mshcad6e3c6da86e82p1cb724jsn7138dd8ba119'])
+        return render_template("found_recipe.html", source=source)
+    else:
+        return render_template("search_error.html")
 #   if (str(request.args['ingredients']).strip() != ""):
       # If there is a list of ingredients -> list
 #       querystring = {"number":"5","ranking":"1","ignorePantry":"false","ingredients":request.args['ingredients']}

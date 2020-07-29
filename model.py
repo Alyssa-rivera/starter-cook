@@ -1,6 +1,6 @@
-# import requests
+import requests
 
-# def getRecipe(query, key):
-#     recipe_query = f"https://api.giphy.com/v1/gifs/search?api_key={key}&q={query}&limit=25&offset=0&rating=g&lang=en"
-#     response = requests.get(recipe_query).json()
-#     return response['data'][0]['images']['fixed_height']['url']
+def getRecipe(query, key):
+    recipe_query = f"https://api.spoonacular.com/recipes/findByIngredients?{key}ingredients={query}&number=<5>&limitLicense=<false>&ranking=<1>&ignorePantry=<ignorePantry>"
+    response = requests.get(recipe_query).json()
+    return response
