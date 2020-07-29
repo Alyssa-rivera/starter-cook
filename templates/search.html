@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Welcome to Recipe Search!{% endblock %}
+
 {% block content %}
-
- 
-<title>Recipe Searcher</title>
-
+<br></br>
 <center>
   <h2 style="padding-top: 3%;">
       It's time for cooking! What do you have in the fridge? 
   </h2>
+  <p style="padding-top: 1%;"> When listing ingredients, please separate each one with a comma</p>
   <br><br>
+
   <form method="post" action="/recipes">
       <div class="input-group mb-3" style="max-width: 50%;">
           <input type="text" class="form-control" placeholder="Apple, flour, sugar" aria-label="Ingredients" aria-describedby="button-addon2" name="ingredients">
@@ -19,4 +18,6 @@
       </div>
   </form>
 </center>
+<br></br>
+<br></br>
 {% endblock %}
