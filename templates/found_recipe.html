@@ -5,24 +5,28 @@
 <h1 style="text-align: center"> <a href="/" style="text-decoration: none; color:blue"> Recipes for you: </a></h1>
 <div style="margin-left:35%;">
 <br></br>
-  <ul class="list-unstyled">
-      {% for recipe in recipes %}
-          <li class="media">
-              <img src="{{recipes['image']}}" class="align-self-center mr-3" alt="..." width="15%" height="15%">
+
+<div><ul>
+  {% for recipe in source %}
+  <li class="media">
+              <img src="{{recipe['image']}}" class="align-self-center mr-3" alt="..." width="15%" height="15%">
               <div class="media-body">
-                  <h5 class="mt-0 mb-1"><a href="/recipes?id={{ recipe['id'] }}">{{ recipes['title'] }}</a></h5>
-                  {% if 'likes' not in recipe %}
-                      How many minutes for preparation? {{recipes['preparationMinutes']}} <br>
-                      How many minutes for cooking? {{recipes['cookingMinutes']}}  <br>
-                      How many likes has this recipe? {{recipes['aggregateLikes']}}  <br>
+                  <h5 class="mt-0 mb-1"><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+                     {% if 'likes' not in recipe%}
+                      How many minutes for preparation? {{recipe['preparationMinutes']}} <br>
+                      How many minutes for cooking? {{recipe['cookingMinutes']}}  <br>
+                      How many likes has this recipe? {{recipe['aggregateLikes']}}  <br>
                   {% else %}
-                      How many your ingredients? {{recipes['usedIngredientCount']}} <br>
-                      How many missed ingredients? {{recipes['missedIngredientCount']}}  <br>
-                      How many likes has this recipe? {{recipes['likes']}}  <br>
+                      How many your ingredients? {{recipe['usedIngredientCount']}} <br>
+                      How many missed ingredients? {{recipe['missedIngredientCount']}}  <br>
+                      How many likes has this recipe? {{recipe['likes']}}  <br>
                   {% endif %}
-              </div>
-          </li> <br>
+<!-- 
+  <li>{{ source }}</li> -->
+</li> <br>
       {% endfor %}
-  </ul>
-</div >
+  </ul> 
+  </div>
+
+
 {% endblock %}
