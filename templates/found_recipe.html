@@ -4,7 +4,7 @@
 
 <br></br>
 <h2 style="text-align: center">Recipes for you:</h2>
-<div style="margin-left:35%;">
+<div style="text-align: left">
 <br></br>
 <section>
 <div><ul>
@@ -12,17 +12,22 @@
   <li class="media">
               <img src="{{recipe['image']}}" class="align-self-left mr-3" alt="..." width="50%" height="50%">
               <div class="media-body">
-            <h3 class="mt-0 mb-1"><a href="/{{recipe['id'] }}">{{ recipe['title'] }}</a></h>
+            <h3><a href="/{{recipe['id'] }}">{{ recipe['title'] }}</a></h3>
+            <div class="question-text">
             <br></br>
-                     {% if 'likes' not in recipe%}
-                      How many minutes for preparation? {{recipe['preparationMinutes']}} <br>
-                      How many minutes for cooking? {{recipe['cookingMinutes']}}  <br>
-                      How many likes has this recipe? {{recipe['aggregateLikes']}}  <br>
+                     {% if 'likes' not in recipe %}
+                     <ol>
+                         <li> How many minutes for preparation? {{recipe['preparationMinutes']}} <br></li>
+                         <li> How many minutes for cooking? {{recipe['cookingMinutes']}}  <br></li>
+                         <li>  How many likes has this recipe? {{recipe['aggregateLikes']}}  <br></li>
+                     </ol> 
+                     
                   {% else %}
                       How many your ingredients? {{recipe['usedIngredientCount']}} <br>
                       How many missed ingredients? {{recipe['missedIngredientCount']}}  <br>
                       How many likes has this recipe? {{recipe['likes']}}  <br>
                   {% endif %}
+            </div>
 
 </li> <br>
       {% endfor %}
@@ -30,4 +35,11 @@
   </div>
 
 </section>
+<style>
+    media-body{
+        display:flex;
+    }
+
+</style>
+
 {% endblock %}

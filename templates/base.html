@@ -58,9 +58,16 @@
   </button>
   
     <!-- <form class="form-inline my-2 my-lg-0"> -->
-    <form method="post" action="/recipes">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Ingredients" aria-describedby="button-addon2" name="ingredients">
-      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    <!-- <form method="post" action="/recipes">
+ 
+      <input class="form-control" type="search" placeholder="Enter Any Ingredient" aria-label="Ingredients" aria-describedby="button-addon2" name="ingredients"><button class="btn btn-outline-secondary" type="submit"> Search</button></input>
+      
+
+    </form> -->
+        <form class="form-inline my-2 my-lg-0" method="post" action="/recipes">
+ 
+      <input class="form-control  mr-sm-2" type="search" placeholder="Enter Any Ingredient" aria-label="Ingredients" aria-describedby="button-addon2" name="ingredients"><button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"> Search</button></input>
+      
 
     </form>
   </div>
@@ -305,6 +312,8 @@
              flex-flow: row wrap;
              justify-content: center;
         }
+
+    
     
         </style>
 </body>
