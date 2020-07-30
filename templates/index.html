@@ -43,7 +43,7 @@
         <!-- <h1>Chocolate Cake</h1>
         <p>Feel down? Need some sweetness? Follow the steps to make a chocolate cake!</p> -->
         <!-- Insert the Hyperlink to other website -->
-        <div class="container">
+        <div class="container"> 
         <div class="row">
             <div id="sub-title" class="col-sm-6"><a href="#">More Sweetness</a></div>
             <div id="sub-title" class="col-sm-6"><a href="https://addapinch.com/the-best-chocolate-cake-recipe-ever/">Recipe</a></div>
@@ -100,7 +100,7 @@
             <div class="card-body">
                 <h6 class="card-title">Epic Summer Salad</h6>
                 <p class="card-text">Perfect for BBQs and buffets, this is an assembly job of gorgeous ingredients – no cooking required. Serve it with lamb kebabs for an impressive summer feast.</p>
-                <a href="#" class="btn btn-primary">Full recipe</a>
+                <a href="https://www.bbcgoodfood.com/recipes/epic-summer-salad" class="btn btn-primary">Full recipe</a>
             </div>
             </div>
 </div>
@@ -110,7 +110,7 @@
         <div class="card-body">
             <h6 class="card-title">Strawberry Shortcake</h6>
             <p class="card-text">Layer biscuits with strawberries and cream and they'll soften to create an indulgent no-bake dessert. Super easy and delicious, it's a fabulous summer treat.</p>
-            <a href="#" class="btn btn-primary">Full Recipe</a>
+            <a href="https://www.foodnetwork.com/recipes/strawberry-shortcake-recipe3-1938695" class="btn btn-primary">Full Recipe</a>
         </div>
         </div>
     </div>
@@ -120,7 +120,7 @@
             <div class="card-body">
                 <h6 class="card-title">Fennel, lemon & tomato salad</h6>
                 <p class="card-text">Combine roasted lemon with fronds of fennel, cherry tomatoes, pomegranate and herbs to make this colourful summer salad. It makes a perfect sharing dish.</p>
-                <a href="#" class="btn btn-primary">Full Recipe</a>
+                <a href="https://www.bbcgoodfood.com/recipes/fennel-roast-lemon-tomato-salad" class="btn btn-primary">Full Recipe</a>
         </div>
         </div>
     </div>
@@ -131,10 +131,9 @@
 <div class="container">
     <div class="row">
     <div class="col-6">
-        <video width="550" height="400" controls>
-            <source src="https://www.youtube.com/watch?v=VJNA4vrdWec" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
+            <iframe width="550" height="400" src="https://www.youtube.com/embed/ZJy1ajvMU1k" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
+      </iframe>
+    
     </div>
     <div class="col-6">
       <h1> Just Starting Out? </h1>
@@ -181,6 +180,8 @@
     }
 
 </style>
+
+
 
 </body>
 {% endblock %}

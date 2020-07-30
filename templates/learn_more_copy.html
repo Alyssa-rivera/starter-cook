@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Recipe Search!{% endblock %}
+    <body>
+  {% block content %}
+  <h2>Welcome to Learn More Page</h2>
+     <p>Want to try out the recipe before making it! Yes! We Got you!</p>
+        <p>We have the best restaurant recommendations just for you!</p>
+        <form method="post" action="/restaurant">
+            <input type="text" name="restaurantchoice" placeholder="Type in any recipe or food"/>
+            <!-- placeholder is the light text within the box -->
+            <!-- URL not found mean the rote is not set up yet! -->
+            <!-- name is to collect information from user -->
+            <!-- name is the key -->
+
+            <input type="submit" value="Submit"/>
+            <!-- method, name, action; two method actions (GET OR POST); for form it's POST;   -->
+            <!-- action is just route -->
+        </form>
+    </body>
+<style>
+    h2{
+        text-align:center;
+    }
+    form{
+        text-align: center;
+    }
+</style>
+{% endblock %}
