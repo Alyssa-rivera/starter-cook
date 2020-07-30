@@ -7,14 +7,16 @@
   <div class="media">
       <img src="{{recipe_list['image']}}" class="mr-3" alt="..." width="20%" height="20%">
       <div class="media-body">
+        <!-- next line is for debugging -->
+        <!-- {{recipe_list['steps']}} -->
         {% for steps in recipe_list['steps'] %}
          <h5 class="mt-0">{{steps['step']}}</h5>
         {% endfor %}
 
       </div>
-  </div><br> -->
-  <!-- {{recipe_list['inregdientsWidget'] | safe }}<br>
-  {{recipe_list['equipmentWidget'] | safe}} -->
+  </div><br> 
+    {{recipe_list['inregdientsWidget'] | safe }}<br>
+    {{recipe_list['equipmentWidget'] | safe}} 
 </div>
  {% endfor %}
 {% endblock %}

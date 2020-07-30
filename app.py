@@ -193,9 +193,6 @@ def add():
     # return ""
 
 # ------------Below is the new information waiting to be add------------------------------------------
-@app.route('/recipehmpg')
-def recipehmpg():
-    return render_template("recipehmpg.html")
 # --------------------------------------Popular Recipes Page------------------------------------------
 @app.route('/popularrecipes')
 def poprecipe():
