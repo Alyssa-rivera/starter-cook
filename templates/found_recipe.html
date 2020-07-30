@@ -10,7 +10,7 @@
 <div><ul>
   {% for recipe in source %}
   <li class="media">
-              <img src="{{recipe['image']}}" class="align-self-left mr-3" alt="..." width="50%" height="50%">
+              <img src="{{recipe['image']}}" class="align-self-left mr-3" alt="..." width="40%" height="40%">
               <div class="media-body">
             <h3><a href="/{{recipe['id'] }}">{{ recipe['title'] }}</a></h3>
             <div class="question-text">
@@ -34,7 +34,6 @@
   </ul> 
   </div>
 
-<<<<<<< HEAD
 </section>
 <style>
     media-body{
@@ -43,7 +42,7 @@
 
 </style>
 
-=======
+
 <!-- </section> -->
->>>>>>> 25906ec046da8eeeeaaec93bc664054fa4d3dbd8
+
 {% endblock %}
