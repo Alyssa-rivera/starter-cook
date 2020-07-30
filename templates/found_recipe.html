@@ -2,16 +2,18 @@
 
 {% block content %}
 
-<h1 style="text-align: center"> <a href="/" style="text-decoration: none; color:blue"> Recipes for you: </a></h1>
+<br></br>
+<h2 style="text-align: center">Recipes for you:</h2>
 <div style="margin-left:35%;">
 <br></br>
-
+<section>
 <div><ul>
   {% for recipe in source %}
   <li class="media">
-              <img src="{{recipe['image']}}" class="align-self-center mr-3" alt="..." width="15%" height="15%">
+              <img src="{{recipe['image']}}" class="align-self-left mr-3" alt="..." width="50%" height="50%">
               <div class="media-body">
-                  <h5 class="mt-0 mb-1"><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+            <h3 class="mt-0 mb-1"><a href="/{{recipe['id'] }}">{{ recipe['title'] }}</a></h>
+            <br></br>
                      {% if 'likes' not in recipe%}
                       How many minutes for preparation? {{recipe['preparationMinutes']}} <br>
                       How many minutes for cooking? {{recipe['cookingMinutes']}}  <br>
@@ -27,5 +29,5 @@
   </ul> 
   </div>
 
-
+</section>
 {% endblock %}

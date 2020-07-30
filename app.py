@@ -5,6 +5,7 @@ from flask import render_template
 from flask import request
 from datetime import datetime
 from model import getRecipe
+from model import fix_query
 # from model import getImageUrlFrom
 from flask_pymongo import PyMongo
 import os
@@ -108,27 +109,6 @@ def restaurant():
 # ________________________________________Routes section API/Recipes________________________________________________________
 
 
-url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
-
-headers = {
-  'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-  'x-rapidapi-key': "<6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56>",
-  }
-
-random_joke = "food/jokes/random"
-find = "recipes/findByIngredients"
-randomFind = "recipes/random"
-
-
-
-
-    # search_response = str(requests.request("GET", url + random_joke, headers=headers).json()["text"])
-    # return render_template('search.html', search=search_response)
-
-
-
-
-
 recipe_key = 'f72d5cb516fe4796aa7d61932e477990'
 
 @app.route('/recipesearch', methods=['POST', 'GET'])
@@ -136,42 +116,41 @@ def search_page():
     
     return render_template('search.html')
 
-#   joke_response = str(requests.request("GET", url + random_joke, headers=headers).json()['text'])
-#  joke=joke_response - add to parameters?
-# if __name__ == '__main__':
-#   app.run()
 
 # Retrieves a results list of recipes
 @app.route('/recipes', methods = ['POST', 'GET'])
-# def get_recipes( )
 def get_recipes():
  
     if request.method == 'POST':
         my_ingr = request.form['ingredients']
-        source = getRecipe(my_ingr, recipe_key)
+        source = getRecipe(fix_query(my_ingr), recipe_key)
         return render_template("found_recipe.html", source=source)
     else:
         return render_template("search_error.html")
 
 # Retrieves specific recipe
-@app.route('/recipe')
-def get_recipe():
-  recipe_id = request.args['id']
-  recipe_info_endpoint = "recipes/{0}/information".format(recipe_id)
-  ingedientsWidget = "recipes/{0}/ingredientWidget".format(recipe_id)
-  equipmentWidget = "recipes/{0}/equipmentWidget".format(recipe_id)
-  recipe_info = requests.request("GET", url + recipe_info_endpoint, headers=headers).json()
+@app.route('/<recipe_id>')
+def get_recipe(recipe_id):
+    recipe_query = f"https://api.spoonacular.com/recipes/{recipe_id}/analyzedInstructions?apiKey={recipe_key}"
+    response = requests.get(recipe_query).json()
+    ingredientsWidget = "recipes/{0}/ingredientWidget".format(recipe_id)
+    equipmentWidget = "recipes/{0}/equipmentWidget".format(recipe_id)
+    return render_template('recipe.html', recipe=response)
+
+#   recipe_info_endpoint = "recipes/{0}/information".format(recipe_id)
+
+#   recipe_info = requests.request("GET", url + recipe_info_endpoint, headers=headers).json()
     
-  recipe_headers = {
-      'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      'x-rapidapi-key': "<6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56>",
-      'accept': "text/html"
-  }
-  querystring = {"defaultCss":"true", "showBacklink":"false"}
-  recipe_info['inregdientsWidget'] = requests.request("GET", url + ingedientsWidget, headers=recipe_headers, params=querystring).text
-  recipe_info['equipmentWidget'] = requests.request("GET", url + equipmentWidget, headers=recipe_headers, params=querystring).text
+#   recipe_headers = {
+#       'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+#       'x-rapidapi-key': "<6d30ff627cmshb1d1c2c1a6c7772p12ae7bjsn36026cb0df56>",
+#       'accept': "text/html"
+#   }
+#   querystring = {"defaultCss":"true", "showBacklink":"false"}
+#   recipe_info['inregdientsWidget'] = requests.request("GET", url + ingedientsWidget, headers=recipe_headers, params=querystring).text
+#   recipe_info['equipmentWidget'] = requests.request("GET", url + equipmentWidget, headers=recipe_headers, params=querystring).text
     
-  return render_template('recipe.html', recipe=recipe_info)
+  
 
 # ________________________________________End Section of API_______________________________________________________ 
 @app.route('/type_of_recipe')
@@ -214,3 +193,10 @@ def add():
     # return ""
 
 # ------------Below is the new information waiting to be add------------------------------------------
+@app.route('/recipehmpg')
+def recipehmpg():
+    return render_template("recipehmpg.html")
+# --------------------------------------Popular Recipes Page------------------------------------------
+@app.route('/popularrecipes')
+def poprecipe():
+    return  render_template("recipehmpg.html")

@@ -15,8 +15,11 @@ import random
 #     response=requests.get(giphy_query).json()
 #     # print(response)
 #     return response['data'][random.randint(0,24)]['images']['fixed_height']['url']
+def fix_query(query):
+    query_fix = query.replace(" ", "+")
+    return query_fix
 
-def getRecipe(query, key):
-    recipe_query = f"https://api.spoonacular.com/recipes/findByIngredients?apiKey={key}&ingredients={query}&number=5"
+def getRecipe(query_fix, key):
+    recipe_query = f"https://api.spoonacular.com/recipes/findByIngredients?apiKey={key}&ingredients={query_fix}&number=5"
     response = requests.get(recipe_query).json()
     return response
