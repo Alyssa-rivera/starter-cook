@@ -1,214 +1,157 @@
 {% extends "base.html" %}
+{% block title %}Welcome to our How to Page!{% endblock %}
+{% block head %}
+<head>
+    <title>Cards in Carousel</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </head>
+{% endblock %}
 
-{% block content %}
 <body>
-    <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="inam" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						 <div class="container">
+						 	<div class="row">
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px;margin: auto;">
+						 				<img src="https://i2.wp.com/www.eatthis.com/wp-content/uploads/2018/10/peeled-ginger-with-spoon.jpg?w=1024&ssl=1" class="card-img-top" height="250" width="400" >
+						 				<div class="card-body">
+						 					<h4 class="card-title">52 Life-Changing Kitchen Hacks That'll Make You Enjoy Cooking Again</h4>
+						 					<p class="card-text">#8 Peel ginger with a spoon.</p>
+                                            
+						 					<button type="button" class="btn btn-warning"><a href="https://www.eatthis.com/kitchen-hacks-cooking-tips/">Read More</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px;">
+						 				<img src="https://www.seriouseats.com/images/2014/10/20141024-poached-eggs-for-a-crowd-03-1500x1125.jpg" class="card-img-top" height="250" width="400">
+						 				<div class="card-body">
+						 					<h4 class="card-title">24 Essential Kitchen Tricks and Tips</h4>
+						 					<p class="card-text">#4 Use that Same Small Strainer for Eggs.</p>
+						 					<button type="button" class="btn btn-warning"><a href="https://www.seriouseats.com/2013/08/24-essential-kitchen-tricks-and-tips.html">Read More</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px;">
+						 				<img src="https://www.thekitchensnob.com/wp-content/uploads/2015/02/cooking-tips-for-beginners-10.jpg" class="card-img-top" height="250" width="400">
+						 				<div class="card-body">
+						 					<h4 class="card-title">15 Cooking Tips Every Beginner Should Know</h4>
+						 					<p class="card-text">#13 Salt your pasta water, never add oil, and don’t rinse.</p>
+						 					<button type="button" class="btn btn-warning"><a href="https://www.thekitchensnob.com/cooking-tips/">Read More</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		
+						 	</div>
+						 	
+						 </div>
 
-  <!--Controls-->
-  <div class="controls-top">
-    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-        class="fas fa-chevron-right"></i></a>
-  </div>
-  <!--/.Controls-->
+						
+					</div>
+					<div class="carousel-item">
+						 <div class="container">
+						 	<div class="row">
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px; height:520px">
+						 				<img src="https://i.ytimg.com/vi/TwPfsCM7zB8/maxresdefault.jpg" class="card-img-top" height="250" width="400">
+						 				<div class="card-body">
+						 					<h4 class="card-title">The Science Behind Cooking</h4>
+						 					<p class="card-text">There’s actually a lot of chemistry that makes your food taste so good.</p>
+						 					<button type="button" class="btn btn-warning"><a href="https://www.youtube.com/watch?v=TwPfsCM7zB8">Watch Video</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px; height:520px">
+						 				<img src="https://miro.medium.com/max/2000/1*k92-ZChOfryiqAKb59peBg.jpeg" class="card-img-top" height="250" width="400">
+						 				<div class="card-body">
+						 					<h4 class="card-title">My Love for Cooking — 5 Reasons Why</h4>
+						 					<p class="card-text">
+                                                 <dd>#1 Trying out new things</dd>
+                                                 <dd>#4 Healthy living</dd> 
+                                                 <dd>#5 Calming the mind</dd>
+                                                 </p>
+            
+						 					<button type="button" class="btn btn-warning"><a href="https://medium.com/@vijinimallawaarachchi/my-love-for-cooking-5-reasons-why-1be5e3d7df98#:~:text=Having%20fun,starting%20from%20chopping%20to%20baking.">Read More</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		<div class="col-sm-12 col-lg-4">
+						 			<div class="card" style="width: 300px; height:520px" >
+						 				<img src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024/https://www.daydreamintoreality.com/wp-content/uploads/2016/11/DSC_0727-1024x701.jpg" class="card-img-top" height="250" width="400">
+						 				<div class="card-body">
+						 					<h4 class="card-title">9 REASONS WHY YOU SHOULD LEARN HOW TO COOK</h4>
+						 					<p class="card-text">#1 It has the power to connect you with those you love!</p>
+						 					<button type="button" class="btn btn-warning"><a href="https://www.daydreamintoreality.com/reasons-cook/">Read More</a></button>
+						 					
+						 				</div>
+						 				
+						 			</div>
+						 			
+						 		</div>
+						 		
+						 	</div>
+						 	
+						 </div>
 
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-    <li data-target="#multi-item-example" data-slide-to="1"></li>
-    
-  </ol>
-  <!--/.Indicators-->
+						
+					</div>
+					
+				</div>
+                <p>Click on the empty space on left and right to find more!</p>
+				<a href="#inam" class="carousel-control-prev" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+				</a>
+				<a href="#inam" class="carousel-control-next" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+				</a> 
+				 
 
-  <!--Slides-->
-  <div class="carousel-inner" role="listbox">
-
-    <!--First slide-->
-    <div class="carousel-item active">
-
-      <div class="col-md-3" style="float:left">
-       <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-      
-       <div class="col-md-3" style="float:left">
-       <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--/.First slide-->
-
-    <!--Second slide-->
-    <div class="carousel-item">
-
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-          <div classasr ="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-            <a class="btn btn-primary">Button</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--/.Second slide-->
-
-   
-
-  </div>
-  <!--/.Slides-->
-
+			</div>
+			
+		</div>
+		
+	</div>
+	
 </div>
-<!--/.Carousel Wrapper-->
+<!-- Top content -->
 
 
-<!-- //// Different Carousel Cards -->
-<div class="container text-center my-3">
-    <h2 class="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
-    <div class="row mx-auto my-auto">
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=1">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=2">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=3">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=4">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=5">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=6">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-    <h5 class="mt-2">Advances one slide at a time</h5>
-</div>
+<style>
+    .container-fluid{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+</style>
 </body>
 {% endblock %}
